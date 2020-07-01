@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 properties([parameters([[$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', description: 'Please select Environment', filterLength: 1, filterable: false, name: 'Environment', randomName: 'choice-parameter-29457514670285', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return ["error"]'], script: [classpath: [], sandbox: false, script: 'return[\' \',\'dev\',\'master\']']]], [$class: 'CascadeChoiceParameter', choiceType: 'PT_CHECKBOX', description: '', filterLength: 1, filterable: true, name: 'Branch', randomName: 'choice-parameter-29457526667858', referencedParameters: 'Environment', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return ["unknown branch"]'], script: [classpath: [], sandbox: false, script: '''if (Environment.equals("dev")){
-    return["Devlopment"]
-} else if (Environment.equals("qa")){
+    return["dev"]
+} else if (Environment.equals("master")){
 return["master"]
 }else {
 return["select env"]
